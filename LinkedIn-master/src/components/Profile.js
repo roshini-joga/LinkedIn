@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addExperience, deleteExperience, addEducation, deleteEducation, addSkill, deleteSkill } from '../Store';
+import {  updateAbout, addExperience, deleteExperience, addEducation, deleteEducation, addSkill, deleteSkill } from '../Store';
 import coverPhoto from './coverPhoto.png';
 import image from './image.jpeg';
 import './Profile.css';
@@ -10,10 +10,29 @@ const Profile = () => {
   const skills = useSelector((state) => state.skills);
   const experience = useSelector((state) => state.experience);
   const education = useSelector((state) => state.education);
-
+  const about = useSelector((state) => state.about); 
+  
   const [newExperience, setNewExperience] = useState('');
   const [newEducation, setNewEducation] = useState('');
   const [newSkills, setNewSkills] = useState('');
+  
+ 
+
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [aboutText, setAboutText] = useState(about);
+
+  const handleEditButtonClick = () => {
+    setIsEditMode(!isEditMode);
+  };
+
+  const handleSaveButtonClick = () => {
+    dispatch(updateAbout(aboutText));
+    setIsEditMode(false);
+  };
+
+  const handleInputChange = (e) => {
+    setAboutText(e.target.value);
+  };
 
   const handleExperienceSubmit = (e) => {
     e.preventDefault();
@@ -64,8 +83,23 @@ const Profile = () => {
       </div>
       <div className="profile-content">
         <div className="profile-about">
-          <h3>About</h3>
-          <p>I am an enthusiastic developer looking for opportunities.</p>
+        <h2>About</h2>
+      {isEditMode ? (
+        <>
+          <textarea
+            value={aboutText}
+            onChange={handleInputChange}
+            rows="4"
+            cols="50"
+          />
+          <button onClick={handleSaveButtonClick}>Save</button>
+        </>
+      ) : (
+        <>
+          <p>{about}</p>
+          <button onClick={handleEditButtonClick}>Edit</button>
+        </>
+      )}
         </div>
         <div className="profile-experience">
           <h3>Experience</h3>
