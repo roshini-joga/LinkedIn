@@ -3,12 +3,11 @@ import './App.css';
 import SignIn from './components/SignIn';
 import Profile from './components/Profile';
 import { Provider } from 'react-redux';
-import ConfigureStore from './store/ConfigureStore';
+import store from './Store';
 // import New from './components/New';
 import { BrowserRouter, Router, Route, Routes,Switch } from 'react-router-dom';
 // import { createBrowserHistory } from 'history';
 
-const store = ConfigureStore(); 
 
 function App() {
   //const history = createBrowserHistory();
