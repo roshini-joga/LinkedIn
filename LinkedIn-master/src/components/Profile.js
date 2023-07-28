@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addExperience, deleteExperience, addEducation, deleteEducation, addSkill, deleteSkill } from './store';
+import { addExperience, deleteExperience, addEducation, deleteEducation, addSkill, deleteSkill } from '../Store';
 import coverPhoto from './coverPhoto.png';
 import image from './image.jpeg';
 import './Profile.css';

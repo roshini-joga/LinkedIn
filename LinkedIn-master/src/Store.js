@@ -1,14 +1,11 @@
-// store.js
 import { createStore } from 'redux';
 
-// Initial state
 const initialState = {
   skills: ['Python', 'React'],
   experience: ['Techsophy - Software Engineer', 'ABC - Frontend Developer'],
   education: ['Osmania University - Computer Science', 'High School - MPC Stream'],
 };
 
-// Actions
 export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
 export const DELETE_EXPERIENCE = 'DELETE_EXPERIENCE';
 export const ADD_EDUCATION = 'ADD_EDUCATION';
