@@ -4,25 +4,24 @@ import SignIn from './components/SignIn';
 import Profile from './components/Profile';
 import { Provider } from 'react-redux';
 import store from './Store';
-// import New from './components/New';
-import { BrowserRouter, Router, Route, Routes,Switch } from 'react-router-dom';
-// import { createBrowserHistory } from 'history';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import the correct components
 
+import EditExperience from './components/EditExperience';
+import EditEducation from './components/EditEducation';
+import EditSkills from './components/EditSkills';
 
 function App() {
-  //const history = createBrowserHistory();
-
   return (
     <Provider store={store}>
-    <BrowserRouter>
-    
-      <Routes>
-        <Route  path="/" element={<SignIn/>} />
-        <Route  path="/Profile" element={<Profile/>} />
-     
-     </Routes>
-    
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/EditExperience" element={<EditExperience />} />
+          <Route path="/EditEducation" element={<EditEducation />} />
+          <Route path="/EditSkills" element={<EditSkills />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );
 }
