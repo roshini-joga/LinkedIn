@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import the c
 import EditExperience from './components/EditExperience';
 import EditEducation from './components/EditEducation';
 import EditSkills from './components/EditSkills';
+import EditAbout from './components/EditAbout'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/EditAbout" element={<EditAbout />} />
           <Route path="/EditExperience" element={<EditExperience />} />
           <Route path="/EditEducation" element={<EditEducation />} />
           <Route path="/EditSkills" element={<EditSkills />} />

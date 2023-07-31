@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import coverPhoto from './coverPhoto.png';
 import image from './image.jpeg';
@@ -37,7 +37,7 @@ const Profile = () => {
           <h2>About</h2>
           <p>{about}</p>
           {/* Link to Edit About page */}
-          <Link to="/edit/about">Edit</Link>
+          <Link to="/EditAbout">Edit</Link>
         </div>
         <div className="profile-experience">
           <h3>Experience</h3>
